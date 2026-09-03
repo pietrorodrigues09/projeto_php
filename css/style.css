@@ -1,56 +1,254 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
 }
 
+/* =========================
+   CABEÇALHO
+========================= */
+
 header {
-    background-color: darkred;
+    background: linear-gradient(135deg, #1f4e79, #163a5c);
     color: white;
-    padding: 15px 30px;
+    padding: 18px 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 26px;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 header nav a {
     color: white;
-    margin-right: 15px;
+    padding: 8px 12px;
+    border-radius: 5px;
     text-decoration: none;
+    transition: 0.3s;
 }
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
 
 main {
-    padding: 20px 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
+main h1,
+main h2,
+main h3 {
+    color: #1f4e79;
 }
+
+/* =========================
+   FORMULÁRIO DE LOGIN
+========================= */
 
 form {
-    max-width: 320px;
+    width: 100%;
+    max-width: 420px;
+    margin: 30px auto;
     background-color: white;
-    padding: 20px;
-    border-radius: 6px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 form label {
     display: block;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
     font-weight: bold;
+    color: #333;
 }
 
 form input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+form input:focus {
+    border-color: #1f4e79;
+    box-shadow: 0 0 0 3px rgba(31, 78, 121, 0.12);
 }
 
 form button {
-    margin-top: 15px;
-    padding: 8px 16px;
-    background-color: darkred;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #1f4e79, #28669d);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(31, 78, 121, 0.3);
+}
+
+/* =========================
+   TABELA DE PRODUTOS
+========================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+table th,
+table td {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table th {
+    background: linear-gradient(135deg, #1f4e79, #28669d);
+    color: white;
+    font-weight: bold;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tbody tr {
+    transition: 0.2s;
+}
+
+table tbody tr:hover {
+    background-color: #f0f6fc;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #666;
+    border-top: 1px solid #ddd;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    header nav a {
+        display: block;
+        padding: 8px 5px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    form {
+        margin: 20px auto;
+        padding: 22px;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   CELULARES PEQUENOS
+========================= */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    main {
+        padding: 15px 10px;
+    }
+
+    form {
+        padding: 18px;
+        border-radius: 8px;
+    }
+
+    form input,
+    form button {
+        padding: 11px;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        font-size: 13px;
+    }
 }
