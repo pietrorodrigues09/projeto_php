@@ -12,6 +12,9 @@ $base_url = '/projeto_php/';
 <body>
     <header>
         <h1>Sistema de Produtos</h1>
+
+        <button class="menu-botao" onclick="abrirMenu()">☰</button>
+        
             <nav>
                 <a href="<?php echo $base_url; ?>index.php">Início</a>
                 <a href="<?php echo $base_url; ?>produtos/listar.php">Produtos</a>
@@ -19,3 +22,5 @@ $base_url = '/projeto_php/';
                 <a href="<?php echo $base_url; ?>logout.php">Sair</a>
             </nav>
     </header>
+
+    <script> function abrirMenu() { document.getElementById("menu").classList.toggle("mostrar"); } </script>
